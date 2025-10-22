@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shruti Tiwari - HR Professional Portfolio</title>
+  
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="description" content="Shruti Tiwari's professional portfolio: Aspiring HR Professional and BBA Student skilled in Recruitment, Employee Engagement, and Financial Literacy." />
+  <meta property="og:title" content="Shruti Tiwari - HR Professional Portfolio" />
+  <meta property="og:description" content="Showcasing experience in HR Operations and achievements in business and management." />
+  <meta property="og:image" content="assets/Profile.png" />
+  <meta property="og:url" content="https://your-username.github.io" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+
+  <style>
+    /* Professional Corporate Color Palette (Teal & Soft Gold):
+       --primary-teal: #004D40; (Deep Teal/Dark Green)
+       --secondary-aqua: #00BFA5; (Vibrant Aqua - Accent)
+       --accent-gold: #FFC107; (Soft Gold/Amber - Highlight)
+       --text-dark: #333333; 
+       --text-light: #F0F0F0; 
+       --panel-light: #FFFFFF; 
+    */
+
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: #ede9e9; /* Very light Teal-Gray background */
+      min-height: 100vh;
+    }
+
+    /* Reusable button */
+    .btn-corporate {
+      display: inline-block;
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #00BFA5, #00796B); /* Aqua to Teal gradient */
+      color: #FFFFFF; 
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      transition: box-shadow 0.3s ease, transform .15s ease, opacity .3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-corporate:hover {
+      box-shadow: 0 4px 15px rgba(0, 191, 165, 0.5); 
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    /* Container Panels (Clean/White) */
+    .panel {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+      background: var(--panel-light); 
+      border: 1px solid #B2DFDB;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .8s ease, transform .8s ease;
+      color: var(--text-dark);
+    }
+    .panel.visible { opacity: 1; transform: translateY(0); }
+
+    h1, h2, h3 {  
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.2px;
+      color: #004D40; /* Deep Teal */
+    }
+    /* HIGHLIGHT NAME */
+    .hero .meta h1 { 
+        font-size: 2.8rem; 
+        font-weight: 800; 
+        color: #090404; 
+        text-shadow: 0 0 10px rgba(77, 45, 69, 0.8); /* Soft Gold Glow */
+    }
+    
+    h2 {
+      font-size: 1.8rem; margin-bottom: 12px;
+      color: #00BFA5; /* Vibrant Aqua section titles */
+      position: relative;
+    }
+    h2 i { margin-right: 10px; }
+    h2::after {
+      content: ""; display: block; width: 60px; height: 3px;
+      background: #FFC107; /* Soft Gold underline */
+      margin-top: 8px; border-radius: 1.5px;
+    }
+    /* Typography for paragraphs and lists */
+    p, ul {  
+      font-family: 'Lora', serif;
+      line-height: 1.7;  
+      font-size: 1.05rem;
+      color: #555555; 
+    }
+    ul { padding-left: 20px; }
+
+    /* Navbar */
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; flex-wrap: nowrap; justify-content: center;
+      gap: 12px 18px;
+      background: #004D40; /* Deep Teal */
+      padding: 12px 10px; border-bottom: 3px solid #FFC107; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    nav.shrink {
+      padding: 8px 8px; background: #004D40;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+    }
+    nav a {
+      color: #F0F0F0; 
+      text-decoration: none; font-weight: 500; font-size: 0.9rem;
+      padding: 6px 10px; border-radius: 4px;
+      transition: background 0.3s ease, color 0.3s ease;
+      text-align: center;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255, 193, 7, 0.2); 
+      color: #FFC107; 
+      border-bottom: 2px solid #FFC107;
+    }
+
+    /* Header */
+    .hero {
+      max-width: 1100px; margin: 22px auto 0; padding: 18px;
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 20px; align-items: center;
+      background-color: var(--primary-teal);
+      color: var(--text-light);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .profile-pic {
+      width: 140px; height: 140px; border-radius: 50%;
+      object-fit: cover; border: 4px solid #FFC107; 
+      background: #FFFFFF;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .profile-pic:hover { 
+        transform: scale(1.03); 
+        box-shadow: 0 0 20px rgba(0, 191, 165, 0.6); 
+    }
+    .hero .meta p.tagline { margin-top: 4px; opacity: 0.9; color: #00BFA5; font-size: 1.1rem; }
+    .quick-links { margin-top: 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .quick-links a {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none; color: #004D40; 
+      font-weight: 600;
+      background: #F0F0F0; 
+      border: 1px solid #00BFA5; 
+      padding: 8px 12px; border-radius: 6px;
+      transition: transform .2s ease, box-shadow .2s ease, background .3s ease;
+    }
+    .quick-links a:hover {
+      transform: translateY(-2px);
+      background: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+    }
+    /* Primary CTA Button Style */
+    .primary-cta {
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+    /* Icon Color */
+    .quick-links a i { color: #00BFA5; }
+    .quick-links a:hover i { color: #004D40; }
+    
+    /* Visual Skills Section */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 25px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #555555;
+    }
+    .skill-item i {
+        font-size: 3.5rem; 
+        color: #00BFA5; 
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .skill-item:hover i {
+        color: #FFC107; 
+        transform: scale(1.05);
+    }
+
+    /* Certifications/Awards Grid */
+    .cert-grid, .awards-grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      display: flex; align-items: center; gap: 15px;
+      background: #F9F9F9; 
+      border-left: 4px solid #00BFA5; 
+      border-radius: 4px; padding: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .link { text-decoration: none; color: inherit; display: block; }
+    .link .card:hover {
+      background: #FFFFFF; 
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 191, 165, 0.2); 
+    }
+    .card i { font-size: 1.5rem; color: #FFC107; }
+    .card h3 { margin: 0; font-size: 1.1rem; font-weight: 600; color: #004D40; }
+    .card p { margin: 2px 0 0 0; font-size: .95rem; opacity: .8; color: #555555; }
+    
+    /* Project/Experience List Styling */
+    .experience-list li, .project-list li {
+        list-style-type: disc;
+        margin-bottom: 10px;
+        color: #555555;
+    }
+    .experience-list strong {
+        color: #004D40;
+    }
+    /* Add for Additional Skills */
+    .additional-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    .additional-skills span {
+        background: #00BFA5;
+        color: #FFFFFF;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* Contact Section Panel - Dark Teal */
+    .panel-contact {
+      background: #004D40;
+      color: var(--text-light); text-align: center;
+      border: 2px solid #FFC107;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    .panel-contact h2 { color: #FFC107; }
+    .panel-contact h2::after { background: #00BFA5; margin-left: auto; margin-right: auto; }
+    .panel-contact p { color: #F0F0F0; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .contact-links { margin-top: 25px; display: flex; justify-content: center; gap: 25px; }
+    .contact-links a { color: #00BFA5; font-size: 2.2rem; transition: transform 0.3s ease, color 0.3s ease; }
+    .contact-links a:hover { transform: scale(1.15); color: #FFC107; }
+    
+    /* Footer */
+    footer { 
+      text-align: center; padding: 20px; margin: 32px 0; 
+      color: #004D40; opacity: 0.8; 
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; justify-items: center; align-items: center; }
+      nav a { width: 100%; font-size: 0.85rem; padding: 8px 6px; }
+      .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; background-color: #004D40; }
+      .hero .meta { margin-top: 10px; }
+      .quick-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="#summary"><i class="fa-solid fa-user"></i> Summary</a>
+    <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+    <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+    <a href="#skills"><i class="fa-solid fa-gears"></i> Skills</a>
+    <a href="#certifications"><i class="fa-solid fa-award"></i> Certifications</a>
+    <a href="#awards"><i class="fa-solid fa-trophy"></i> Awards</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
+
+  <div class="hero">
+    <img class="profile-pic" src="assets/Profile.png" alt="Profile Photo of Shruti Tiwari"/>
+    <div class="meta">
+      <h1>Shruti Tiwari</h1>
+      <p class="tagline">Aspiring HR Professional | BBA Student | Passionate about Recruitment, Employee Engagement & HR Operations</p>
+      <div class="quick-links">
+        <a href="#experience" class="btn-corporate primary-cta">View Profile</a>
+        <a href="mailto:shrutitiwari2973@gmail.com" aria-label="Email Me">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shruti-tiwari-8348a930a" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="assets/Profile (2).pdf" target="_blank" aria-label="Download Resume">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section id="summary" class="panel">
+    <h2><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
+    <p>
+        I'm a motivated BBA student at Allenhouse Business School with a strong passion for business management and innovation. Through my internship at Lohia Corp Limited, I've gained hands-on experience and developed skills in recruitment, employee management, and HR process optimization. I thrive in team environments and am eager to contribute to business growth, especially in startup innovation and marketing.
+    </p>
+    <p>
+      My expertise spans HR, communication, leadership, and digital marketing. I also hold relevant certifications in Bancassurance, Insurance Selling, and AI in HRM.
+    </p>
+  </section>
+
+  <section id="experience" class="panel">
+    <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+    <p><strong>Human Resources Intern</strong> — Lohia Corp Limited</p>
+    <p>May 2025 – June 2025 (2 months) | Kanpur Nagar, Uttar Pradesh, India</p>
+    <ul class="experience-list">
+      <li>Supported a wide range of HR processes and functions, gaining valuable hands-on experience in core HR functions like employee relations, performance management, and compliance.</li>
+      <li>Actively participated in recruitment by assisting with candidate sourcing, coordinating interviews, and managing the onboarding process for new hires.</li>
+      <li>Maintained accurate employee records, ensuring all data was updated and compliant with company policies.</li>
+      <li>Contributed to the optimization of HR processes in collaboration with the HR team, driving improvements in operational efficiency.</li>
+      <li>Enhanced communication skills by working cross-functionally to support day-to-day HR activities.</li>
+    </ul>
+  </section>
+
+  <section id="education" class="panel">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+    <p><strong>Bachelor of Business Administration (BBA)</strong>, Business Administration and Management, General<br/>
+        Allenhouse Group of Colleges (Kanpur, India)<br/>
+        May 2023 – August 2026
+    </p>
+  </section>
+
+  <section id="skills" class="panel">
+  <h2><i class="fa-solid fa-bolt"></i> Top Skills</h2>
+  
+  <div class="skills-grid">
+      <div class="skill-item"><i class="fa-solid fa-handshake"></i><span>Recruitment</span></div>
+      <div class="skill-item"><i class="fa-solid fa-users-gear"></i><span>HR Operations</span></div>
+      <div class="skill-item"><i class="fa-solid fa-comments"></i><span>Employee Engagement</span></div>
+      <div class="skill-item"><i class="fa-solid fa-chart-line"></i><span>Financial Literacy</span></div>
+      <div class="skill-item"><i class="fa-solid fa-building-columns"></i><span>Banking Operations</span></div>
+      <div class="skill-item"><i class="fa-solid fa-shield-halved"></i><span>Risk Management</span></div>
+      <div class="skill-item"><i class="fa-solid fa-person-chalkboard"></i><span>Leadership</span></div>
+      <div class="skill-item"><i class="fa-solid fa-bullhorn"></i><span>Digital Marketing</span></div>
+  </div>
+
+  <h3 style="margin-top: 30px; margin-bottom: 10px; color: #00796B;">Analytical Tools</h3>
+  <div class="additional-skills">
+    <span><i class="fa-solid fa-chart-simple" style="color: #FFC107;"></i> Power BI</span>
+    <span><i class="fa-solid fa-file-excel" style="color: #FFC107;"></i> Advance Excel</span>
+    <span><i class="fa-solid fa-laptop-file" style="color: #FFC107;"></i> MS Office</span>
+  </div>
+
+</section>
+
+  <section id="certifications" class="panel">
+    <h2><i class="fa-solid fa-award"></i> Certifications</h2>
+    <div class="cert-grid">
+      
+      <a href="assets/IMG-20251015-WA0035.jpg" target="_blank" class="link">
+        <div class="card">
+          <i class="fa-solid fa-building-columns"></i>
+          <div><h3>Certificate Programme in Banking, Finance and Insurance</h3><p>Bajaj Finserv Limited, 100-hour program</p></div>
+        </div>
+      </a>
+      <a href="assets/AI in Human Resource Management (2).pdf" target="_blank" class="link">
+        <div class="card">
+          <i class="fa-solid fa-robot"></i>
+          <div><h3>AI in Human Resource Management</h3><p>NPTEL, 12 week course, Elite certified</p></div>
+        </div>
+      </a>
+       <div class="card">
+        <i class="fa-solid fa-sack-dollar"></i>
+        <div><h3>Bancassurance and Insurance Selling</h3><p>Included in Certifications</p></div>
+      </div>
+      <a href="assets/IMG-20251015-WA0031.jpg" target="_blank" class="link">
+        <div class="card">
+          <i class="fa-solid fa-microscope"></i>
+          <div><h3>International Conference Participant & Presenter</h3><p>Presented paper: "The Role of Digital Platform in Scaling Startups"</p></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="awards" class="panel">
+    <h2><i class="fa-solid fa-trophy"></i> Honors & Awards</h2>
+    <div class="awards-grid">
+      
+      <a href="assets/IMG-20251015-WA0033.jpg" target="_blank" class="link">
+        <div class="card">
+          <i class="fa-solid fa-medal"></i>
+          <div><h3>Winner: Tug of War</h3><p>Exuberance-25</p></div>
+        </div>
+      </a>
+      <a href="assets/IMG-20251015-WA0032.jpg" target="_blank" class="link">
+        <div class="card">
+          <i class="fa-solid fa-medal"></i>
+          <div><h3>Winner: Wonder Scott (Cricket)</h3><p>Exuberance-25</p></div>
+        </div>
+      </a>
+      <a href="assets/IMG-20251015-WA0029.jpg" target="_blank" class="link">
+        <div class="card">
+          <i class="fa-solid fa-recycle"></i>
+          <div><h3>2nd Runner-up: Best out of Waste</h3><p>Competition held during Exuberance-24</p></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="panel panel-contact">
+    <h2><i class="fa-solid fa-envelope"></i> Get In Touch</h2>
+    <p>
+      I am a motivated BBA student and aspiring HR professional eager to apply my skills in recruitment, employee engagement, and business management. I'm actively seeking opportunities to contribute to dynamic teams.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:shrutitiwari2973@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/shruti-tiwari-8348a930a" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Shruti Tiwari — Built with professionalism and passion.
+  </footer>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+      panels.forEach(p => {
+        const top = p.getBoundingClientRect().top;
+        if (top < trigger) p.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+
+    const navbar = document.getElementById('navbar');
+    const links = navbar.querySelectorAll('a');
+    const sections = [...links].map(a => {
+        const href = a.getAttribute('href');
+        return href.startsWith('#') ? document.querySelector(href) : null;
+    }).filter(Boolean);
+
+    const onScroll = () => {
+      if (window.scrollY > 40) navbar.classList.add('shrink');
+      else navbar.classList.remove('shrink');
+
+      let currentSection = null;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i] && sections[i].getBoundingClientRect().top - 120 <= 0) {
+          currentSection = sections[i];
+          break;
+        }
+      }
+      links.forEach(l => l.classList.remove('active'));
+      if (currentSection) {
+        const activeLink = navbar.querySelector(`a[href="#${currentSection.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('load', onScroll);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
